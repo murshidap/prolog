@@ -1,0 +1,12 @@
+prime(X):-X>1,loop(X,2);
+write('neither prime nor composite').
+loop(X,I):-I=<X/2,
+    (mod(X,I)=:=0,
+     fin(1);
+    J is I+1,
+     loop(X,J));
+     fin(0).
+fin(A):-A=:=0,
+    write('prime');
+    write('composite').
+
